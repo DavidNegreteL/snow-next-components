@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "styled-components";
+import DesignSystem from "../../design-stystem/design.system";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={DesignSystem.snowball}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
